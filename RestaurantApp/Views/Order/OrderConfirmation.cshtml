@@ -1,0 +1,23 @@
+﻿
+@model RestaurantApp.ViewModel.OrderDetailsViewModel
+    
+
+@{
+    ViewData["Title"] = "OrderConfirmation";
+}
+
+<h2>OrderConfirmation</h2>
+
+@if (Model.OrderDetail != null)
+{
+    //then use partial view
+
+    <div class="thumbnail row">
+        @Html.Partial("_IndividualOrderDetails", Model)
+    </div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-success">Place Another Order</a>
+}
+else
+{
+    <div class="text-danger">Error...Please try again</div>
+}

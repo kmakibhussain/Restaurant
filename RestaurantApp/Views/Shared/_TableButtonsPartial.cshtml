@@ -1,0 +1,43 @@
+﻿
+@*7*@
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+<td style="width:150px;">
+    <div class="btn-group" role="group">
+        @Html.Partial("_IndividualButtonPartial",
+                         new RestaurantApp.Models.IndividualButtonPartial()
+                         {
+                             View = "Edit",
+                             ButtonType = "btn-primary",
+                             Glyph = "pencil",
+                             Id = Model.Id
+
+                         })
+
+        @Html.Partial("_IndividualButtonPartial",
+                        new RestaurantApp.Models.IndividualButtonPartial()
+                        {
+                            View = "Details",
+                            ButtonType = "btn-success",
+                            Glyph = "list",
+                            Id = Model.Id
+
+                        })
+
+        @Html.Partial("_IndividualButtonPartial",
+                        new RestaurantApp.Models.IndividualButtonPartial()
+                        {
+                            View = "Delete",
+                            ButtonType = "btn-danger",
+                            Glyph = "trash",
+                            Id = Model.Id
+
+                        })
+    </div>
+</td>

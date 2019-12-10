@@ -1,0 +1,96 @@
+﻿@model IEnumerable<RestaurantApp.Models.FoodType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<br />
+<h2>Food Type List</h2><br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        &nbsp; Create New
+    </a>
+</p>
+
+<div class="form-border">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+
+                <td>
+                    @*EDIT|DELETE|DETAILS*@
+
+                    @Html.Partial("_TableButtonsPartial", new IndividualButtonPartial { Id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@

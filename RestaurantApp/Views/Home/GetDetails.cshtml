@@ -1,0 +1,176 @@
+﻿@model RestaurantApp.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "GetDetails";
+}
+
+
+
+<h2>Menu Item Details</h2>
+
+<form method="post">
+
+    <div class="form-border row">
+
+        <div class="col-sm-8">
+
+
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label asp-for="@Model" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="@Model.MenuItem.Name" disabled class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label asp-for="@Model.MenuItem.Description" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea style="height:150px;" asp-for="@Model.MenuItem.Description" disabled class="form-control"></textarea>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label asp-for="@Model.MenuItem.Price" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="@Model.MenuItem.Price" disabled class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+
+                <div class="col-sm-4">
+                    <label asp-for="@Model.MenuItem.Spicyness" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <select asp-for="@Model.MenuItem.Spicyness" disabled asp-items="Html.GetEnumSelectList<MenuItem.ESpicy>()" class="form-control"></select>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+
+                <div class="col-sm-4">
+                    <label asp-for="@Model.MenuItem.CategoryId" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="@Model.MenuItem.CategoryType.Name" disabled class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+
+                <div class="col-sm-4">
+                    <label asp-for="@Model.MenuItem.FoodTypeId" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="@Model.MenuItem.FoodType.Name" disabled class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+
+                <div class="col-sm-4">
+                    <label asp-for="@Model.Count" class="custom-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="@Model.Count" class="form-control" />
+                </div>
+
+            </div>
+
+            @*4: create button*@
+
+            <div class="form-group row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-8">
+                    <button type="submit" value="Add To Cart" class="btn btn-primary form-control">Add To Cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 col-sm-offset-1">
+            <img src="@Model.MenuItem.Image" style="width:100%; border-radius:5px; border:1px solid #bbb9b9;" />
+        </div>
+
+        <br />
+        <div class="form-group col-sm-12">
+
+            @* delete extra Edit option from copied part*@
+            <a asp-controller="Home" asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+        </div>
+    </div>
+
+    @*To know for post handler, which menu item to be added to database*@
+    <input asp-for="@Model.MenuItemId" hidden />
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>GetDetails</h2>
+
+    <div>
+        <h4>ShoppingCart</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ApplicationUserId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ApplicationUserId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MenuItemId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MenuItemId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Count)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Count)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>*@

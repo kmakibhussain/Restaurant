@@ -1,0 +1,72 @@
+﻿@model RestaurantApp.Models.CategoryType
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<h2>Category Types Details</h2>
+<hr />
+<br />
+
+
+
+<div class="form-border">
+
+    <fieldset disabled>
+
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <label asp-for="Name" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="Name" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <label asp-for="DisplayOrder" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="DisplayOrder" class="form-control" />
+            </div>
+        </div>
+    </fieldset>
+    <br />
+    <div class="form-group">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+    </div>
+
+
+</div>
+
+
+
+
+
+@*<h2>Details</h2>
+
+    <div>
+        <h4>CategoryType</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DisplayOrder)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>*@

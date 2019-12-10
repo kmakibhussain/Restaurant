@@ -1,0 +1,152 @@
+﻿@model IEnumerable<RestaurantApp.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<br />
+<h2>Menu Item List</h2><br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        &nbsp; Create New
+    </a>
+</p>
+
+<div class="form-border">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(m => m.Price)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(m => m.CategoryType.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(m => m.FoodType.Name)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => item.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => item.CategoryType.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => item.FoodType.Name)
+                </td>
+
+                <td>
+
+                    @Html.Partial("_TableButtonsPartial", new IndividualButtonPartial { Id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Spicyness)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FoodType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Spicyness)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodType.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
